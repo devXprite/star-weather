@@ -4,7 +4,7 @@ import { FaThermometerHalf } from 'react-icons/fa';
 
 const OverView = ({ data }: { data: Current }) => {
     return (
-        <div className="rounded-xl mt-6 bg-gray-800 p-6">
+        <div className="rounded-xl mt-0 bg-gray-800 p-6">
             <div className='flex justify-between'>
             <h3 className="text mb-3 font-semibold uppercase text-gray-400">
                 <FaLocationPin className="inline-block" /> Unnao

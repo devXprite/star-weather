@@ -64,7 +64,7 @@ export interface DailyEntity {
   wind_speed: number;
   wind_deg: number;
   wind_gust: number;
-  weather?: (WeatherEntity)[] | null;
+  weather: (WeatherEntity)[];
   clouds: number;
   pop: number;
   rain?: number | null;
