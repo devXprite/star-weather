@@ -7,7 +7,7 @@ import { MdLocationPin } from 'react-icons/md';
 
 const OverView = ({ data, city }: { data: Current; city: City }) => {
     return (
-        <div className="mt-0 rounded-xl bg-gray-800 p-6">
+        <div className="rounded-xl bg-gray-800 p-4 md:p-6">
             <div className="flex justify-between font-medium">
                 <h3 className="text mb-3 text-gray-400">
                     <MdLocationPin className="inline-block" /> {city.name}, {city.country}
@@ -30,7 +30,7 @@ const OverView = ({ data, city }: { data: Current; city: City }) => {
                 </div>
                 <img
                     src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`}
-                    className="-my-6 size-24 md:size-32"
+                    className="-my-8 size-32 -mx-4 md:size-36"
                 />
             </div>
             <div className="mt-4 flex items-end gap-4 text-gray-400">

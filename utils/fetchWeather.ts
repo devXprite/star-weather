@@ -3,8 +3,8 @@ import type { WeatherType } from "@/types/WeatherType"
 import { isAxiosError } from "axios"
 
 interface Params {
-    lat: string
-    lon: string
+    lat: number
+    lon: number
 }
 
 const fetchWeather = async ({ lat, lon }: Params): Promise<WeatherType> => {

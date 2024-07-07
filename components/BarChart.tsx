@@ -29,7 +29,7 @@ interface Props {
 const BarChart = ({ labels, values, label }: Props) => {
     return (
         <div className="w-full overflow-x-auto">
-            <div className="h-56 w-full min-w-[36rem]">
+            <div className="h-56 w-full min-w-[40rem]">
                 <Line
                     options={{
                         maintainAspectRatio: false,

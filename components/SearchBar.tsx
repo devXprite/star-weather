@@ -32,7 +32,7 @@ const SearchBar = () => {
         <form
             action={'/'}
             method="get"
-            className="group mx-auto mb-20 mt-4 flex max-w-screen-sm items-center rounded-full bg-gray-700/75 px-5 py-2 focus-within:rounded-lg focus-within:bg-gray-700 md:text-lg"
+            className="group mx-auto mb-10 md:mb-20 mt-4 flex max-w-screen-sm items-center rounded-full bg-gray-700/75 px-5 py-2 focus-within:rounded-lg focus-within:bg-gray-700 md:text-lg"
         >
             <MdLocationPin />
             <input

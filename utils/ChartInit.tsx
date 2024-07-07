@@ -38,7 +38,7 @@ ChartJS.defaults.plugins.colors.enabled = false;
 ChartJS.defaults.plugins.title.display = true;
 // ChartJS.defaults.plugins.legend.position = 'bottom';
 // ChartJS.defaults.borderColor = '#000000';
-ChartJS.defaults.scale.grid.color = 'rgba(256, 256, 256, 0.04)';
+ChartJS.defaults.scale.grid.color = 'rgba(256, 256, 256, 0.03)';
 
 const ChartInit = () => {
     return <div></div>;
