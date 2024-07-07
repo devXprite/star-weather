@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
+import ChartInit from '@/utils/ChartInit';
+import SearchBar from '@/components/SearchBar';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -17,7 +19,11 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={poppins.className}>
-                <div className="mx-auto min-h-screen max-w-[86rem] p-4">{children}</div>
+                <ChartInit />
+                <div className="mx-auto min-h-screen max-w-[86rem] p-4">
+                    <SearchBar />
+                    <div>{children}</div>
+                </div>
             </body>
         </html>
     );

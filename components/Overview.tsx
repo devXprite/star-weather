@@ -1,6 +1,7 @@
 import { FaCloud, FaLocationPin } from 'react-icons/fa6';
 import type { Current } from '@/types/WeatherType';
 import { FaThermometerHalf } from 'react-icons/fa';
+import { TbWorldLatitude, TbWorldLongitude } from "react-icons/tb";
 
 const OverView = ({ data }: { data: Current }) => {
     return (
@@ -15,20 +16,24 @@ const OverView = ({ data }: { data: Current }) => {
             </div>
             <div className="flex my-4 items-center justify-between">
                 <div>
-                    <h2 className="text-6xl font-medium">{data.temp.toFixed(1)}°</h2>
+                    <h2 className="text-5xl md:text-6xl font-medium">{data.temp.toFixed(1)}°</h2>
                     <p className="md:text-base mt-1 text-gray-400">
                         <FaThermometerHalf className="inline-block" /> Feels like: {data.feels_like}°
                     </p>
                 </div>
                 <img
                     src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`}
-                    className="-my-6 md:size-32"
+                    className="-my-6 size-24 md:size-32"
                 />
             </div>
-            <div className="mt-4 flex items-center justify-between">
-                <p className="font-medium capitalize text-gray-400 md:text-xl">{data.weather[0].description}</p>
-                <p className="md:text-sm">
-                    <FaCloud className="inline-block" /> Clouds: {data.clouds}%
+            <div className="mt-4 flex items-end gap-4 text-gray-400">
+                <p className="font-medium capitalize mr-auto text-gray-300 md:text-xl">{data.weather[0].description}</p>
+                <p className="text-xs md:text-sm">
+                     Lat: 20.242°
+                </p>
+                
+                <p className="text-xs md:text-sm">
+                     Lon: 79.0123°
                 </p>
                 {/* <p className="md:text-sm">Feels like: {data.feels_like}</p> */}
             </div>

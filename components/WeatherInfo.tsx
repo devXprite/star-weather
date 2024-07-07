@@ -151,16 +151,16 @@ const WeatherInfo = ({ data }: Props) => {
                         <p className="mb-2 text-xs md:text-base font-medium">{item.title}</p>
                         <div className="flex justify-between gap-2">
                             <div>
-                                <p className='text-2xl text-gray-200 font-semibold'>
-                                    {item.value} <span className='text-sm text-gray-300'>
+                                <p className='text-xl md:text-2xl text-gray-200 font-semibold'>
+                                    {item.value} <span className='text-xs md:text-sm text-gray-300'>
                                         {item.unit}
                                     </span>
                                 </p> 
-                                <p className='text-sm opacity-80'>
+                                <p className='text-xs md:text-sm opacity-80'>
                                     {item.detail}
                                 </p>
                             </div>
-                            <p className=" md:text-3xl">{item.icon}</p>
+                            <p className="text-3xl md:text-3xl">{item.icon}</p>
                         </div>
                     </div>
                 ))}

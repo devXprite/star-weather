@@ -33,11 +33,11 @@ const DailyForecast = ({ data }: Props) => {
     return (
         <section>
             <h3 className="section-title">7 day Forecast</h3>
-            <div className="flex flex-col gap-3 text-center">
+            <div className="flex flex-col gap-2 text-center">
                 {data.map((day, index) => (
                     <div
                         key={day.dt}
-                        className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-2 rounded-lg bg-gray-800 px-4 py-3 text-sm text-gray-300 shadow-md"
+                        className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center gap-2 rounded-lg bg-gray-800 px-4 py-3 text-xs md:text-sm text-gray-300 shadow-md"
                     >
                         <div className="text-left text-sm">
                             <p>
@@ -45,9 +45,7 @@ const DailyForecast = ({ data }: Props) => {
                                     weekday: 'long',
                                 })}
                             </p>
-                            <p>
-                                
-                            </p>
+                           
                         </div>
 
                         <img
