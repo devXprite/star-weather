@@ -29,7 +29,6 @@ interface Props {
 // };
 
 const DailyForecast = ({ data }: Props) => {
-    console.log(data);
     return (
         <section>
             <h3 className="section-title">7 day Forecast</h3>

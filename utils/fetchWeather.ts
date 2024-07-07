@@ -13,7 +13,7 @@ const fetchWeather = async ({ lat, lon }: Params): Promise<WeatherType> => {
             params: {
                 lat,
                 lon,
-                exclude: "minutely,hourly",
+                exclude: "minutely",
             }
         });
 

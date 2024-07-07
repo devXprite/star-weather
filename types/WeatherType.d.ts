@@ -4,8 +4,8 @@
   timezone: string;
   timezone_offset: number;
   current: Current;
-  hourly?: (HourlyEntity)[] | null;
-  daily?: (DailyEntity)[] | null;
+  hourly: (HourlyEntity)[];
+  daily: (DailyEntity)[];
 }
 export interface Current {
   dt: number;

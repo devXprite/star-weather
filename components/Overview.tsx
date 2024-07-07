@@ -1,23 +1,30 @@
 import { FaCloud, FaLocationPin } from 'react-icons/fa6';
 import type { Current } from '@/types/WeatherType';
-import { FaThermometerHalf } from 'react-icons/fa';
-import { TbWorldLatitude, TbWorldLongitude } from "react-icons/tb";
+import { FaClock, FaThermometerHalf } from 'react-icons/fa';
+import { TbWorldLatitude, TbWorldLongitude } from 'react-icons/tb';
+import type { City } from '@/types/CityType';
+import { MdLocationPin } from 'react-icons/md';
 
-const OverView = ({ data }: { data: Current }) => {
+const OverView = ({ data, city }: { data: Current; city: City }) => {
     return (
-        <div className="rounded-xl mt-0 bg-gray-800 p-6">
-            <div className='flex justify-between'>
-            <h3 className="text mb-3 font-semibold uppercase text-gray-400">
-                <FaLocationPin className="inline-block" /> Unnao
-            </h3>
-            <p className='text-sm text-gray-400'>
-                Just Now 
-            </p>
+        <div className="mt-0 rounded-xl bg-gray-800 p-6">
+            <div className="flex justify-between font-medium">
+                <h3 className="text mb-3 text-gray-400">
+                    <MdLocationPin className="inline-block" /> {city.name}, {city.country}
+                </h3>
+                <p className="text-sm uppercase text-gray-400">
+                    <FaClock className="mr-1 inline-block" />
+                    {new Date(data.dt * 1000).toLocaleString('en-IN', {
+                        weekday: 'short',
+                        hour: 'numeric',
+                        minute: '2-digit',
+                    })}
+                </p>
             </div>
-            <div className="flex my-4 items-center justify-between">
+            <div className="my-4 flex items-center justify-between">
                 <div>
-                    <h2 className="text-5xl md:text-6xl font-medium">{data.temp.toFixed(1)}°</h2>
-                    <p className="md:text-base mt-1 text-gray-400">
+                    <h2 className="text-5xl font-medium md:text-6xl">{data.temp.toFixed(1)}°</h2>
+                    <p className="mt-1 text-gray-400 md:text-base">
                         <FaThermometerHalf className="inline-block" /> Feels like: {data.feels_like}°
                     </p>
                 </div>
@@ -27,14 +34,10 @@ const OverView = ({ data }: { data: Current }) => {
                 />
             </div>
             <div className="mt-4 flex items-end gap-4 text-gray-400">
-                <p className="font-medium capitalize mr-auto text-gray-300 md:text-xl">{data.weather[0].description}</p>
-                <p className="text-xs md:text-sm">
-                     Lat: 20.242°
-                </p>
-                
-                <p className="text-xs md:text-sm">
-                     Lon: 79.0123°
-                </p>
+                <p className="mr-auto font-medium capitalize text-gray-300 md:text-xl">{data.weather[0].description}</p>
+                <p className="text-xs md:text-sm">Lat: {city.lat.toFixed(3)}°</p>
+
+                <p className="text-xs md:text-sm">Lon: {city.lon.toFixed(3)}°</p>
                 {/* <p className="md:text-sm">Feels like: {data.feels_like}</p> */}
             </div>
 
