@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Poppins } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import ChartInit from '@/utils/ChartInit';
-import SearchBar from '@/components/SearchBar';
 import Footer from '@/components/Footer';
+import SearchBar from '@/components/SearchBar';
 
 const poppins = Poppins({
     subsets: ['latin'],

@@ -7,11 +7,12 @@ const IP = () => {
     const FALLBACK_IP_ADDRESS = '';
     const forwardedFor = headers().get('x-forwarded-for')
 
-    if (forwardedFor && forwardedFor != '::1') return forwardedFor.split(',')[0] ?? FALLBACK_IP_ADDRESS
+    if (forwardedFor && !forwardedFor.startsWith('::') ) return forwardedFor.split(',')[0] ?? FALLBACK_IP_ADDRESS
     return headers().get('x-real-ip') ?? FALLBACK_IP_ADDRESS;
 }
 
 const fetchGeo = async (q: string): Promise<City | null> => {
+    console.log(IP());
     try {
         if (q) {
             const response = await OpenWeather.get<City[]>('geo/1.0/direct', {
@@ -27,7 +28,6 @@ const fetchGeo = async (q: string): Promise<City | null> => {
             }
         });
 
-        console.log(data);
 
         const city: City = {
             name: data.city,

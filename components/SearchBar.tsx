@@ -1,30 +1,18 @@
 'use client';
 
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { MdLocationPin } from 'react-icons/md';
 
-const SearchBar = () => {
+const Search = () => {
     const searchParams = useSearchParams();
-
     const [query, setQuery] = useState<string>('');
-    // const [suggestions, setSuggestions] = useState<City[]>([]);
 
     useEffect(() => {
         const defaultValue = searchParams.get('q') || '';
         setQuery(defaultValue);
     }, []);
-
-    // useEffect(() => {
-    //     if (query.length < 2) return;
-    //     const controller = new AbortController();
-    //     const signal = controller.signal;
-
-    //     searchGeo(query).then(data => setSuggestions(data));
-
-    //     return () => controller.abort();
-    // }, [query]);
 
     return (
         <form
@@ -46,17 +34,15 @@ const SearchBar = () => {
             <button>
                 <FaSearch />
             </button>
-
-            {/* {query.length >= 0 && (
-                <div className="absolute left-1/2 top-20 shadow-2xl shadow-gray-900 z-10 w-full max-w-screen-sm -translate-x-1/2 -translate-y-0.5 rounded-b-xl bg-gray-700">
-                    {suggestions.map((city, index) => (
-                        <div key={index} className="px-4 py-2">
-                            {city.name}, {city.country}
-                        </div>
-                    ))}
-                </div>
-            )} */}
         </form>
+    );
+};
+
+const SearchBar = () => {
+    return (
+        <Suspense>
+            <Search />
+        </Suspense>
     );
 };
 
