@@ -29,7 +29,7 @@ const TodayForecast = ({ data }: Props) => {
                     .slice(0, 12)
                     .map((hour, index) => (
                         <div key={hour.dt} className="rounded-md bg-gray-800 p-3">
-                            <p className="mb-1 text-[10px] font-semibold uppercase text-gray-400 md:text-xs">
+                            <p className="mb-1 text-[8px] font-semibold uppercase text-gray-400 md:text-xs">
                                 {new Date(hour.dt * 1000).toLocaleString('en-IN', {
                                     hour: '2-digit',
                                     hour12: true,
@@ -40,7 +40,7 @@ const TodayForecast = ({ data }: Props) => {
                             <img
                                 // replace the n in icon with d for day and n for night
                                 src={`https://openweathermap.org/img/wn/${hour.weather[0].icon.replace('n', 'd')}@2x.png`}
-                                className="-my-2.5 mx-auto scale-110 md:size-20"
+                                className="-my-2.5 mx-auto md:scale-110 md:size-20"
                             />
 
                             <h3 className="font-semibold md:text-lg">{hour.temp.toFixed(0)}°</h3>

@@ -32,13 +32,13 @@ const DailyForecast = ({ data }: Props) => {
     return (
         <section>
             <h3 className="section-title">7 day Forecast</h3>
-            <div className="flex flex-col gap-2 text-center">
+            <div className="flex flex-col gap-1.5 md:gap-2 text-center">
                 {data.map((day, index) => (
                     <div
                         key={day.dt}
                         className="grid grid-cols-[2fr_1fr_1fr_1fr_1fr] items-center gap-2 rounded-lg bg-gray-800 px-4 py-3 text-xs md:text-sm text-gray-300 shadow-md"
                     >
-                        <div className="text-left text-sm">
+                        <div className="text-left text-xs md:text-sm">
                             <p>
                                 {new Date(day.dt * 1000).toLocaleDateString(undefined, {
                                     weekday: 'long',
@@ -59,8 +59,8 @@ const DailyForecast = ({ data }: Props) => {
                         <p>
                             <FaTemperatureArrowDown className="inline-block" /> {day.temp.min.toFixed(0)}°
                         </p>
-                        <p>
-                            <FaWind className="inline-block" /> {day.wind_speed.toFixed(0)}<span className='ml-0.5 text-[10px] text-gray-400'>m/s</span>
+                        <p className='whitespace-nowrap'>
+                            <FaWind className="inline-block" /> {day.wind_speed.toFixed(0)}<span className='ml-0.5 text-[8px] md:text-[10px] text-gray-400'>m/s</span>
                         </p>
                     </div>
                 ))}

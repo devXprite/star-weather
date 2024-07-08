@@ -1,0 +1,1 @@
+export default {"name":"Kanpur","local_names":{"te":"కాన్పూర్","oc":"Kanpur","en":"Kanpur","ru":"Канпур","kn":"ಕಾನ್ಪುರ","he":"קאנפור","pa":"ਕਾਨਪੁਰ","tr":"Kanpûr","ta":"கான்பூர்","ur":"کانپور","ml":"കാൺപൂർ","hi":"कानपुर","ar":"كانبور","or":"କାନପୁର","zh":"坎普尔","ko":"칸푸르"},"lat":26.4609135,"lon":80.3217588,"country":"IN","state":"Uttar Pradesh"}

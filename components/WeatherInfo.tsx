@@ -91,7 +91,7 @@ const WeatherInfo = ({ data }: Props) => {
             title: 'Humidity',
             value: `${data.humidity}`,
             unit: '%',
-            detail: `Dew at ${data.dew_point}°C`,
+            detail: `Dew at ${data.dew_point.toFixed(0)}°C`,
             icon: <MdDewPoint />,
         },
         {
@@ -147,7 +147,7 @@ const WeatherInfo = ({ data }: Props) => {
 
             <div className="grid grid-cols-2 gap-3 md:grid-cols-4 text-gray-400">
                 {cardData.map((item, i) => (
-                    <div key={i} className={`rounded-xl bg-gray-800 p-4 pt-3 shadow-md`}>
+                    <div key={i} className={`rounded-lg md:rounded-xl bg-gray-800 p-3 md:p-4 pt-3 shadow-md`}>
                         <p className="mb-2 text-xs md:text-base font-medium">{item.title}</p>
                         <div className="flex justify-between gap-2">
                             <div>

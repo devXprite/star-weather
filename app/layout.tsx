@@ -3,6 +3,7 @@ import { Inter, Poppins } from 'next/font/google';
 import './globals.css';
 import ChartInit from '@/utils/ChartInit';
 import SearchBar from '@/components/SearchBar';
+import Footer from '@/components/Footer';
 
 const poppins = Poppins({
     subsets: ['latin'],
@@ -24,6 +25,7 @@ export default function RootLayout({
                     <SearchBar />
                     <div>{children}</div>
                 </div>
+                <Footer />
             </body>
         </html>
     );
