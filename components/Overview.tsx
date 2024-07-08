@@ -9,7 +9,7 @@ const OverView = ({ data, city }: { data: Current; city: City }) => {
     return (
         <div className="rounded-xl bg-gray-800 p-4 md:p-6">
             <div className="flex justify-between font-medium">
-                <h3 className="text text-sm md:text-base mb-3 text-gray-400">
+                <h3 className="text-sm md:text-base mb-3 text-gray-400">
                     <MdLocationPin className="inline-block" /> {city.name}, {city.country}
                 </h3>
                 <p className="text-xs md:text-sm uppercase text-gray-400">
