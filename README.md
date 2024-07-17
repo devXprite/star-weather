@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ This project is an advanced weather website where users can view current weather conditions, forecasts, air quality, weather maps, and more. The application is built using modern web development technologies to ensure a seamless and responsive user experience.
+
+## Features
+
+- **Current Weather**: View the current weather conditions for any location.
+- **Weather Forecasts**: Access detailed weather forecasts for the upcoming days.
+- **Air Quality**: Check the air quality index and related information.
+- **Weather Maps**: Explore interactive weather maps for visualizing different weather parameters.
+- **Responsive Design**: Fully responsive design to provide a great experience on both desktop and mobile devices.
+
+## Technologies Used
+
+- **Next.js**: A React framework for server-side rendering and generating static websites.
+- **TypeScript**: A typed superset of JavaScript that adds type safety and enhances development experience.
+- **Tailwind CSS**: A utility-first CSS framework for styling the application.
+- **Axios**: A promise-based HTTP client for making requests to the OpenWeather API.
+- **OpenWeather API**: Used to fetch weather data, forecasts, and air quality information.
 
 ## Getting Started
 
-First, run the development server:
+Follow these instructions to set up the project on your local machine.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Prerequisites
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ensure you have the following installed:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Node.js (>= 14.x)
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Installation
 
-## Learn More
+1. **Clone the repository**:
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    git clone https://github.com/devxprite/star-weather.git
+    cd star-weather
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. **Install dependencies**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    npm install
+    ```
 
-## Deploy on Vercel
+3. **Set up environment variables**:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    Create a `.env.local` file in the root directory and add your OpenWeather API key:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+    ```bash
+    NEXT_PUBLIC_OPENWEATHER_API_KEY=your_openweather_api_key
+    ```
+
+4. **Run the development server**:
+
+    ```bash
+    npm run dev
+    ```
+
+    Open [http://localhost:3000](http://localhost:3000) with your browser to see the application in action.
+
+
+
+### Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request if you have any improvements to the project.
+
+### License
+Distributed under the MIT License. See `LICENSE` for more information.
+
+### Acknowledgements
+
+- [OpenWeather](https://openweathermap.org/)
+- [Next.js](https://nextjs.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
+- [Windy](https://www.windy.com/)
+
+### Support
+Give a ⭐️ if you found this project helpful!

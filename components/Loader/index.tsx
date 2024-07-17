@@ -15,7 +15,7 @@ const Loader = () => {
                     width="10px"
                     height="10px"
                     viewBox="0 0 10 10"
-                    enable-background="new 0 0 10 10"
+                    enableBackground="new 0 0 10 10"
                     xmlSpace="preserve"
                     className=" opacity-100 size-20 [&_path]:fill-gray-400 "
                 >
@@ -85,7 +85,7 @@ const Loader = () => {
                     width="10px"
                     height="10px"
                     viewBox="0 0 10 10"
-                    enable-background="new 0 0 10 10"
+                    enableBackground="new 0 0 10 10"
                     xmlSpace="preserve"
                     className="size-32 z-10 [&_path]:fill-gray-700"
                 >

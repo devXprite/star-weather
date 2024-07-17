@@ -7,12 +7,11 @@ const IP = () => {
     const FALLBACK_IP_ADDRESS = '';
     const forwardedFor = headers().get('x-forwarded-for')
 
-    if (forwardedFor && !forwardedFor.startsWith('::') ) return forwardedFor.split(',')[0] ?? FALLBACK_IP_ADDRESS
+    if (forwardedFor && !forwardedFor.startsWith('::')) return forwardedFor.split(',')[0] ?? FALLBACK_IP_ADDRESS
     return headers().get('x-real-ip') ?? FALLBACK_IP_ADDRESS;
 }
 
 const fetchGeo = async (q: string): Promise<City | null> => {
-    console.log(IP());
     try {
         if (q) {
             const response = await OpenWeather.get<City[]>('geo/1.0/direct', {
@@ -20,6 +19,12 @@ const fetchGeo = async (q: string): Promise<City | null> => {
             });
 
             return response.data[0];
+        }
+
+        if (!process.env.IPINFO_API_KEY) {
+            console.log('\n\nIPINFO_API_KEY is not set in the .env file');
+            console.log('\nYou need to set the IPINFO_API_KEY in the .env file for fetching the location based on IP address\n\n');
+            return null;
         }
 
         const { data } = await axios.get('https://ipinfo.io/' + IP(), {
