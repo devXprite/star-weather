@@ -1,4 +1,4 @@
- This project is an advanced weather website where users can view current weather conditions, forecasts, air quality, weather maps, and more. The application is built using modern web development technologies to ensure a seamless and responsive user experience.
+ It's an advanced weather website where users can view current weather conditions, forecasts, air quality, weather maps, and more. The application is built using modern web development technologies to ensure a seamless and responsive user experience.
 
 ## Features
 
@@ -15,6 +15,10 @@
 - **Tailwind CSS**: A utility-first CSS framework for styling the application.
 - **Axios**: A promise-based HTTP client for making requests to the OpenWeather API.
 - **OpenWeather API**: Used to fetch weather data, forecasts, and air quality information.
+
+## Screenshot
+
+![Screenshot 1](public/banner.png)
 
 ## Getting Started
 

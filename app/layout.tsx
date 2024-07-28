@@ -14,8 +14,9 @@ export const metadata: Metadata = {
     title: 'Star Weather',
     description: 'An advanced weather website where users can view current weather conditions, forecasts, air quality, weather maps, and more.',
     keywords: ['weather', 'forecast', 'air quality', 'maps', 'star weather', 'starweather', 'opensource', 'open source', 'react', 'nextjs', 'tailwindcss', 'typescript'],
-
+    metadataBase: new URL("http://star-weather.vercel.app"),
     openGraph:{
+
         images:[{
             url: '/banner.png'
         }]
