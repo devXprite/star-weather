@@ -51,7 +51,7 @@ Ensure you have the following installed:
     Create a `.env.local` file in the root directory and add your OpenWeather API key:
 
     ```bash
-    NEXT_PUBLIC_OPENWEATHER_API_KEY=your_openweather_api_key
+    OPENWEATHER_API_KEY=your_openweather_api_key
     ```
 
 4. **Run the development server**:
