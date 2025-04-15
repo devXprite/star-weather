@@ -8,6 +8,8 @@ import fetchGeo from '@/utils/fetchGeo';
 import fetchAir from '@/utils/fetchAir';
 import AirQuality from '@/components/AirQuality';
 import SunPosition from '@/components/SunPosition';
+import DarkModeToggle from '@/components/DarkModeToggle';
+import ScrollToTop from '@/components//ScrollToTop';
 
 // import fs from 'fs';
 // import weather from '@/sample/weatherData';
@@ -40,28 +42,32 @@ const Page = async ({ searchParams: { q = '' } }: { searchParams: SearchParams }
     // fs.writeFileSync('sample/airData.ts', `export default ${JSON.stringify(air)}`);
 
     return (
-        <div>
-            <div className="hidden grid-cols-[1fr_2fr] gap-16 md:grid">
-                <div className="space-y-10">
-                    <OverView data={weather.current} city={city} />
-                    <AirQuality data={air} />
-                    <SunPosition sunrise={weather.current.sunrise} sunset={weather.current.sunset} />
-                    <DailyForecast data={weather.daily} />
+        <div className="dark:bg-gray-900 dark:text-white">
+            <DarkModeToggle />
+            <ScrollToTop />
+            <div>
+                <div className="hidden grid-cols-[1fr_2fr] gap-16 md:grid">
+                    <div className="space-y-10">
+                        <OverView data={weather.current} city={city} />
+                        <AirQuality data={air} />
+                        <SunPosition sunrise={weather.current.sunrise} sunset={weather.current.sunset} />
+                        <DailyForecast data={weather.daily} />
+                    </div>
+                    <div className="space-y-10">
+                        <WeatherInfo data={weather.current} />
+                        <TodayForecast data={weather.hourly} />
+                        <Map lat={city.lat} lon={city.lon} />
+                    </div>
                 </div>
-                <div className="space-y-10">
+                <div className="space-y-10 md:hidden">
+                    <OverView data={weather.current} city={city} />
                     <WeatherInfo data={weather.current} />
                     <TodayForecast data={weather.hourly} />
+                    <DailyForecast data={weather.daily} />
+                    <AirQuality data={air} />
+                    <SunPosition sunrise={weather.current.sunrise} sunset={weather.current.sunset} />
                     <Map lat={city.lat} lon={city.lon} />
                 </div>
-            </div>
-            <div className="space-y-10 md:hidden">
-                <OverView data={weather.current} city={city} />
-                <WeatherInfo data={weather.current} />
-                <TodayForecast data={weather.hourly} />
-                <DailyForecast data={weather.daily} />
-                <AirQuality data={air} />
-                <SunPosition sunrise={weather.current.sunrise} sunset={weather.current.sunset} />
-                <Map lat={city.lat} lon={city.lon} />
             </div>
         </div>
     );
